@@ -21,13 +21,22 @@
 	border-bottom-color: #363b78;
 }
 
+@media (max-width: 600px) {
+  .banner {
+    height: 120px;
+	left: 0%;
+	width: 100%;
+	background-size: 140% auto;
+  }
+}
+
 .container
 {
 	display: flex;
 	height: 60px;
 	width: 100%;
 	background-color: rgba(255, 255, 255, 0.3);
-	flex-flow: row wrap;
+	flex-flow: row;
 	justify-content: space-between;
 	list-style: none;
     padding: 0;
@@ -41,7 +50,7 @@
   min-width: 180px;
   line-height: 100%;
   color: #363b78;
-  font-size: 18pt;
+  font-size: 110%;
 }
 
 .link
@@ -62,6 +71,8 @@ a
 
 .boldable
 {
+	margin-left: auto;
+	margin-right: auto;
 	cursor: pointer;
 }
 
@@ -72,8 +83,9 @@ a
 
 .dropdown
 {
-	display: inline-block;
+	display: flex;
 	position: relative;
+    height: 100%;
 }
 
 .dropdown-content {
@@ -89,29 +101,75 @@ a
 
 .dropitem
 {
+  display: block;
   padding: 0px 20px 0 20px;
-  height: 20px;
   line-height: 100%;
   color: white;
-  font-size: 12pt;
+  font-size: 75%;
 }
 
+.dropitem
+{
+  min-height: 20px;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+.dropdown-content {
+  display: flex;
+  flex-flow: column;
+  height: 0px;
+  margin-top: 0px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  padding: 0px 0px;
+  line-height: unset;
+  z-index: 1;
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.flexitem {
+  min-width: 0px;
+}
+
+.boldable {
+  margin-top: 10px;
+  margin-left: unset;
+  margin-right: unset;
+}
+
+.dropdown {
+  display: flex;
+  flex-flow: column;
+  height: unset;
+  transition: 0.5s;
+}
+
+.white
+{
+  color: #363b78;
+}
+}
+
+@media (min-width: 601px) {
 .dropdown:hover .dropdown-content {
   display: block;
+}
 }
 
 .title
 {
   color: #363b78;
   padding-top: 12px;
-  font-size: 18pt;
+  font-size: 110%;
   margin: 0 0 0 0;
 }
 
 .tagline
 {
   color: #363b78;
-  font-size: 24pt;
+  font-size: 150%;
   margin: auto;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -122,6 +180,12 @@ a
 	position: relative;
 	top: 300px;
 	display: flex;
+}
+
+@media (max-width: 600px) {
+  .content {
+    top: 120px;
+  }
 }
 
 .spacer
@@ -146,12 +210,12 @@ a
 .bigbold
 {
 	font-weight: bold;
-	font-size: 16pt;
+	font-size: 100%;
 }
 
 .small
 {
-	font-size: 8pt;
+	font-size: 75%;
 }
 
 .inline
@@ -222,6 +286,7 @@ li
 body
 {
 	font-family: Verdana;
+	font-size: 16px;
 }
 
 .people
@@ -247,6 +312,7 @@ body
 	flex-flow: column wrap;
 	justify-content: space-between;
 	margin: auto;
+	width: 60%;
 }
 
 .blurb
@@ -259,7 +325,7 @@ body
 .name
 {
   color: #363b78;
-  font-size: 24pt;
+  font-size: 150%;
   margin: auto;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -270,13 +336,14 @@ body
 
 .face
 {
-	width: 300px;
+	width: 30%;
 	height: auto;
 	margin: auto;
 }
 
 img.face
 {
+	width: 100%;
 	border-style: solid;
 	border-color: #363b78;
 }
@@ -291,7 +358,7 @@ img.face
 .paper
 {
   color: #363b78;
-  font-size: 16pt;
+  font-size: 100%;
   margin: auto;
   padding-top: 0px;
   padding-left: 20px;
@@ -303,7 +370,7 @@ img.face
 .journal
 {
   color: #55597a;
-  font-size: 12pt;
+  font-size: 75%;
   font-style: italic;
   margin: auto;
   padding-left: 20px;
@@ -337,5 +404,77 @@ img.face
 	display: flex;
 	flex-flow: row;
 	justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+	.publication,.person
+	{
+		flex-flow: column;
+	}
+	.persondesc
+	{
+		width: 100%;
+	}
+	.face
+	{
+		width: 60%;
+	}
+	.paper,.journal,.blurb
+	{
+		padding-left: 0px;
+	}
+	.paper,.name
+	{
+		padding-top: 10px;
+	}
+
+	.list,.persondesc
+	{
+		padding: 0px 0px 0px 0px;
+	}
+}
+
+.opennav
+{
+	display: none;
+	position: absolute;
+	top: 0;
+    right: 0;
+	margin-top: 18px;
+	padding: 0px 20px 0 20px;
+	color: #363b78;
+	font-size: 110%;
+	cursor: pointer;
+}
+
+.navigation
+{
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+  .navigation
+  {
+	width: 0px; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	top: 0; /* Stay at the top */
+	right: 0;
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+	background-color: rgba(255, 255, 255, 0.9);
+	border-bottom-style: solid;
+	border-bottom-color: #363b78;
+	border-left-style: solid;
+	border-left-color: #363b78;
+	flex-flow: column;
+	overflow-x: hidden; /* Disable horizontal scroll */
+	z-index: 1; /* Stay on top */
+  }
+
+  .opennav
+  {
+    display: block;
+  }
 }
 

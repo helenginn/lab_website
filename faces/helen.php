@@ -1,6 +1,6 @@
 <div class="person">
 <div class="face">
-<img class="face" src="faces/helen.png" style="float:right;"/>
+<img class="face" src="faces/helen.png"/>
 </div>
 <div class="persondesc">
 <div class="name">Helen</div>

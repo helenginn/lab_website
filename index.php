@@ -19,7 +19,10 @@ if (isset($_GET["page"]))
 
 <html>
 <header>
+<script src="menu.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="stylesheet" type="text/css" href="main.css"/>
+<link rel="stylesheet" type="text/css" href="menu.css"/>
 </header>
 
 <body>
@@ -27,11 +30,15 @@ if (isset($_GET["page"]))
 <!-- Logo and title -->
 <div class="banner">
 <li class="container">
-<ul class="flexitem">The Protein Machinists</ul>
-<ul class="flexitem"></ul>
-<ul class="flexitem"><span class="boldable"><a href="?page=home">Home</a></span></ul>
-<ul class="flexitem dropdown">
-  <span class="boldable"><a href="?page=research">Research</a></span>
+<div class="flexitem" style="min-width: 240px;" >
+  <span class="boldable"><a href="?page=home">The Protein Machinists</a></span>
+</div>
+<div class="flexitem"></div>
+<div class="opennav" onclick="openNav()">Menu</div>
+<div class="navigation" id="navigation">
+<div class="flexitem dropdown"><div class="boldable"><a href="?page=home">Home</a></div></div>
+<div class="flexitem dropdown" onclick="openSub(this, '?page=research')">
+  <div class="boldable">Research</div>
   <div class="dropdown-content">
     <p class="dropitem boldable">
 		<a href="?page=research&subpage=motivation" class="white">
@@ -44,10 +51,10 @@ if (isset($_GET["page"]))
 		</a>
 	</p>
   </div>
-</ul>
+</div>
 
-<ul class="flexitem dropdown">
-  <span class="boldable"><a href="?page=join">Join</a></span>
+<div class="flexitem dropdown" onclick="openSub(this, '?page=join')">
+  <span class="boldable">Join</span>
   <div class="dropdown-content">
     <p class="dropitem boldable">
 		<a href="?page=join&subpage=positions" class="white">
@@ -56,7 +63,7 @@ if (isset($_GET["page"]))
 	</p>
     <p class="dropitem boldable" style="height: 40px;">
 		<a href="?page=join&subpage=choosing" class="white">
-			Choosing a good group leader
+			Choosing a good group<br/>leader
 		</a>
 	</p>
     <p class="dropitem boldable">
@@ -65,22 +72,35 @@ if (isset($_GET["page"]))
 		</a>
 	</p>
   </div>
-</ul>
-
-<ul class="flexitem dropdown">
-  <span class="boldable">
-<a href="?page=members">Members</a></span>
-</ul>
-
-<ul class="flexitem boldable">
-<a href="?page=contact">
-Contact
-</a>
-</ul>
-</li>
 </div>
 
-<div class="content">
+<!--
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="<?php echo $home_link?>">Home</a>
+  <a href="#"><?php echo ($de ? "Über uns" : "About us")?></a>
+  <a href="<?php echo $contact_link?>"><?php echo ($de ? "Kontakt" : "Contact")?></a>
+  <a href="#">Impressum</a>
+</div>
+
+<div class="opennav" onclick="openNav()">Menu</div>
+-->
+
+<div class="flexitem dropdown">
+  <span class="boldable">
+<a href="?page=members">Members</a></span>
+</div>
+
+<div class="flexitem dropdown" style="padding-bottom: 10px">
+<span class="boldable">
+<a href="?page=contact"> Contact </a>
+</span>
+</div>
+</li>
+</div>
+</div>
+
+<div class="content" onclick="closeNav()">
 <div class="spacer"></div>
 <div class="bulk">
 <?php include "${page}.php"; ?>
