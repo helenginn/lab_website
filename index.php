@@ -8,7 +8,8 @@ if (isset($_GET["page"]))
 		strcmp($tmp, "research") == 0 ||
 		strcmp($tmp, "join") == 0 ||
 		strcmp($tmp, "members") == 0 ||
-		strcmp($tmp, "contact") == 0)
+		strcmp($tmp, "contact") == 0 ||
+		strcmp($tmp, "impressum") == 0)
 	{
 		$page = $tmp;
 	}
@@ -74,18 +75,6 @@ if (isset($_GET["page"]))
   </div>
 </div>
 
-<!--
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="<?php echo $home_link?>">Home</a>
-  <a href="#"><?php echo ($de ? "Über uns" : "About us")?></a>
-  <a href="<?php echo $contact_link?>"><?php echo ($de ? "Kontakt" : "Contact")?></a>
-  <a href="#">Impressum</a>
-</div>
-
-<div class="opennav" onclick="openNav()">Menu</div>
--->
-
 <div class="flexitem dropdown">
   <span class="boldable">
 <a href="?page=members">Members</a></span>
@@ -96,7 +85,15 @@ if (isset($_GET["page"]))
 <a href="?page=contact"> Contact </a>
 </span>
 </div>
-</li>
+
+<!--
+<div class="flexitem dropdown" style="padding-bottom: 10px">
+<span class="boldable">
+<a href="?page=impressum">Impressum</a>
+</span>
+</div>
+-->
+
 </div>
 </div>
 
