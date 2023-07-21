@@ -2,7 +2,10 @@
 Join
 </div>
 <p>
-There are currently no positions being advertised but enquiries with CVs are always welcome.
+<a href="https://v22.desy.de/e67416/records197395/index_eng.html">Please see the current job advert on the DESY website!</a>
+</p>
+<p>
+Otherwise, CVs are always welcome.
 </p>
 
 <?php include "contact.php"; ?>
