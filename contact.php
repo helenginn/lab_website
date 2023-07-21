@@ -10,15 +10,11 @@ Contact Helen at the Protein Machinists lab:
 <br/>
 Dr. Helen Ginn
 <br/>
-Diamond Light Source Ltd.
+Centre for Free Electron Laser Science
 <br/>
-Harwell Science and Innovation Campus
+Luruper Chaussee 149
 <br/>
-Didcot
-<br/>
-Oxfordshire
-<br/>
-OX11 0DE, UK
+22607 Hamburg, DE
 </div>
 <div style="padding-right: 10px;">
 <span class="emphasis">Physical location</span>:
